@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <tipod id="1">Cedula
+  </tipod>
+  <tipod id="2">Visa
+  </tipod>
+  <tipod id="3">Pasaporte
+  </tipod>
+  <tipod id="4">Licencia
+  </tipod>
+</root>

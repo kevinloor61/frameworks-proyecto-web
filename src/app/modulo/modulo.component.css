@@ -1,0 +1,34 @@
+* {
+	box-sizing: border-box;
+    
+    background-size: cover;
+}
+
+body{
+    font-size: 'Robot', sans-serif;
+    background-color: #adecf7;
+    margin: 0;
+}
+
+.container{
+    max-width: 100%;
+    margin: auto;
+    margin-top: 50px;
+    
+}
+
+
+/*------formulario-----*/
+.form{
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 50px;
+    margin-top: 10px;
+    text-align: center;
+    background:  rgba(153, 228, 247, 0.922);
+}
+
+.form-input{
+    margin-bottom: 40px;
+  
+}

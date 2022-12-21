@@ -1,0 +1,76 @@
+<body>
+    <div class="container">
+        <form action="" class="form" id="form" name="form" onsubmit="return validacion()">
+            <p class="form-titulo">REGISTRO DE CITAS MEDICAS </p>
+                 <!-- se le implementa  el xml  en opciones de tipos de documentos en la que el ngfor 
+                    obtiene o atrapa todas esas opciones -->
+            <div class="form-input">
+                <p>Tipo de documento</p> 
+                <select name="Tipo de cita">
+                    <option value="0" selected disabled>Elige una opción</option>
+                    <option *ngFor="let tipo of TipoDocu">{{tipo.document}}</option>
+                </select>
+            </div>
+            <div class="form-input">
+                <p>
+                    Cédula del paciente: <input type="number" name="patient_ID" id="patient_id" autofocus required/>
+                </p>
+            </div>
+                 <!-- se le implementa  el json  en opciones de tipos de citas en la que el ngfor 
+                    obtiene o atrapa todas esas opciones -->
+            <div class="form-input">
+                <p>Tipo de cita</p>
+                <select name="Tipo de cita">
+                    <option value="0" selected disabled>Elige una opción</option>
+                    <option [value]="tipos" *ngFor="let cita of tipos">{{cita.tipoC}}</option>
+                </select>
+            </div>
+            <div class="form-input"> 
+                <p>
+                    Nombre: <input type="text" name="name_control" required/>
+                    Apellido: <input type="text" name="lastname" required/>
+                </p>
+           </div>
+    
+            <div class="form-input">
+                <p>
+                    Observaciones: <input type="text" name="observations" required/>
+                </p>
+            </div>
+
+            <div class="form-input"> 
+                <p>
+                    Fecha de cita: <input type="date" name="Appointment_date" required/>
+                    Horario: Mañana<input type="radio" name="schedule" value="mañana" required>
+                    Tarde <input type="radio" name="schedule" value="tarde" required>
+                </p>
+            </div>
+
+            <div class="form-input">
+                <p>
+                    <input type="submit" value="ENVIAR">
+                    <input type="button" value="IMPRIMIR" onclick="imprimirPagina();">
+                </p>
+           </div>
+        </form> 
+    </div> 
+
+<script type="text/javascript">
+    function imprimirPagina(){
+        window.print();
+    }
+
+    function validacedula(){
+        valor = document.getElementById("patient_id").value;
+        var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F',
+         'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V',
+          'H', 'L', 'C', 'K', 'E', 'T'];
+        if(!(/^\d{8}[A-Z]$/.test(valor))){
+           return false; 
+        }
+        if(valor.charAt(8) != letras[(valor.substring(0, 8))%23]) {
+        return false;
+        }
+    }
+</script>
+</body>
